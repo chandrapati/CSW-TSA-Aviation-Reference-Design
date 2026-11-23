@@ -17,7 +17,7 @@
 
 **Joint EA 23-01 is SSI** under [49 CFR 1520.5(b)](https://www.ecfr.gov/current/title-49/section-1520.5) — DHS confirmed this in the [Federal Register](https://www.govinfo.gov/content/pkg/FR-2024-04-19/html/2024-08394.htm) (89 FR 28569, n.1). **Its text is not public and is not reproduced in this repo.**
 
-That makes this design structurally different from the [TSA Rail](https://github.com/chandrapati/CSW-TSA-Rail-Reference-Design) and TSA Pipeline designs in this series, which map to a published directive clause by clause. **This one cannot.** It maps CSW capability to what TSA has described **publicly**:
+So this design maps CSW capability to what TSA has described **publicly**, rather than to clause numbers:
 
 - the **four performance-based measures** in TSA's [March 7, 2023 press release](https://www.tsa.gov/news/press/releases/2023/03/07/tsa-issues-new-cybersecurity-requirements-for-airport-and-aircraft), quoted verbatim;
 - the **plan, identification, and annual assessment obligations** recited in the public appellate record of [*Spokane Airport Board v. TSA*](https://media.cadc.uscourts.gov/opinions/docs/2026/01/23-1155-2154795.pdf).
@@ -26,19 +26,18 @@ No EA provision numbers appear anywhere in this repo. The capability labels in t
 
 ---
 
-## Airlines are not covered by the rail Security Directive
+## The instrument, and what it means for you
 
-If you arrived here from the rail design: SD 1580/82-2022-01E applies to freight railroad carriers identified in 49 CFR 1580.101 and other TSA-designated freight and passenger railroads. **It never mentions aviation.** Aviation cyber requirements came through a different instrument entirely.
-
-| | **Aviation** | **Rail** |
-|---|---|---|
-| Instrument | Joint Emergency Amendment **23-01** | Security Directive **1580/82-2022-01E** |
-| Mechanism | Amends the TSA-approved **security program** | Standalone **security directive** |
-| Authority | 49 CFR **1542.105(d)**, **1544.105(d)** | 49 U.S.C. **114(l)(2)** |
-| TSOB ratification | **Not required** | **Required** beyond 90 days |
-| Expiry / renewal | **No fixed expiry**; no annual revision letter | Annual renewal (01 → 01E) |
-| Public disclosure | **SSI** | TSA determined the text is **not** SSI |
-| Clause-level mapping possible? | **No** | Yes |
+| | **Joint EA 23-01** |
+|---|---|
+| Instrument | Emergency amendment to the TSA-approved **security program** |
+| Mechanism | Amends your security program; your Cybersecurity Implementation Plan becomes part of it |
+| Authority | 49 CFR **1542.105(d)** (airports), **1544.105(d)** (aircraft operators) |
+| Covered parties | Certain airport operators (part 1542) and aircraft operators (part 1544) |
+| Effective | **Immediately** on issuance, March 7, 2023; **not stayed** by a petition for reconsideration |
+| Expiry / renewal | **No fixed expiry** and no annual revision letter |
+| Public disclosure | **SSI** under 49 CFR 1520.5(b) |
+| What TSA inspects against | Your **approved Cybersecurity Implementation Plan** |
 
 Current status: upheld in *Spokane Airport Board v. TSA*, No. 23-1155 (D.C. Cir. **Jan. 20, 2026**). TSA has signalled intent to move to notice-and-comment rulemaking on no fixed timeline — its November 2024 surface NPRM is **not** the aviation vehicle.
 
@@ -131,7 +130,7 @@ An airport operator's tree keeps the shape but repopulates the critical branch, 
 
 **16 🟢 Direct · 9 🟠 Supporting · 18 ⚪ Evidence Required** across 43 mapped capabilities.
 
-The ⚪ count is the highest in this series, for structural reasons rather than product shortcomings: two of the four measures are predominantly identity and endpoint work, and aviation's excluded estate is larger than rail's. Lead with the 🟢 column and name the ⚪ column before a customer finds it.
+The ⚪ count is the highest in this series, for structural reasons rather than product shortcomings: two of the four measures are predominantly identity and endpoint work, and aviation's excluded estate is unusually broad. Lead with the 🟢 column and name the ⚪ column before a customer finds it.
 
 ### Where CSW is the primary evidence source
 
@@ -157,14 +156,14 @@ Multi-factor authentication, account and credential management, shared accounts,
 
 **And the boundary unique to aviation:** because the EA is SSI, no vendor document can give you clause-level traceability. That gap closes only inside the customer, by someone with authorized access mapping these capability rows to real provisions and to the approved CIP. Plan for that step in the engagement.
 
-**SSI handling.** Everything you submit to TSA under the EA is SSI, and so is the EA. Treat CSW evidence exports as SSI from the moment they are incorporated into a plan, assessment, or submission, under 49 CFR part 1520. This is stricter than rail, where the directive text itself is openly discussable.
+**SSI handling.** Everything you submit to TSA under the EA is SSI, and so is the EA. Treat CSW evidence exports as SSI from the moment they are incorporated into a plan, assessment, or submission, under 49 CFR part 1520. Both the amendment and your submissions sit inside the SSI boundary, so apply part 1520 handling to the whole chain from the moment evidence is generated.
 
 ---
 
 ## Start here
 
-1. **The SSI constraint** — §1.2 of the design. It governs how this material can honestly be used.
-2. **The scope boundary** — §1.3. Aircraft, airport OT, endpoints.
+1. **The SSI constraint** — §1.1 of the design. It governs how this material can honestly be used.
+2. **The scope boundary** — §1.2. Aircraft, airport OT, endpoints.
 3. **Requirement mapping** — §2, measure by measure.
 4. **Scope tree and labels** — §3, including the airport-operator variant in §3.4.
 5. **Policy set** — §4, with the bidirectional negative test in §4.2.
