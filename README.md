@@ -1,6 +1,13 @@
 # Cisco Secure Workload — TSA Aviation Cybersecurity Reference Design
 
-![hero](./assets/hero.png)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=chandrapati.CSW-TSA-Aviation-Reference-Design&left_text=visitors)
+
+![Cisco Secure Workload compliance reference design](assets/hero.png)
+
+![Framework](https://img.shields.io/badge/Framework-TSA%20Joint%20EA%2023--01-003366)
+![Platform](https://img.shields.io/badge/Platform-Cisco%20Secure%20Workload%204.0-1BA0D7)
+![Type](https://img.shields.io/badge/Type-Reference%20Design-107C41)
+![Evidence](https://img.shields.io/badge/Evidence-not%20attestation-C55A11)
 
 **Mapping Cisco Secure Workload to TSA Joint Emergency Amendment 23-01 — for aircraft operators (airlines) under 49 CFR part 1544 and airport operators under part 1542.**
 
@@ -42,6 +49,7 @@ Current status: upheld in *Spokane Airport Board v. TSA*, No. 23-1155 (D.C. Cir.
 | File | Purpose |
 |---|---|
 | [**CSW-TSA-Aviation-Reference-Design.md**](./CSW-TSA-Aviation-Reference-Design.md) | The full design — requirement mapping, scope tree, policy set, evidence package, boundary, inspection guide |
+| **Compliance Report** ([PDF](./CSW-TSA-Aviation-Compliance-Report.pdf) · [DOCX](./CSW-TSA-Aviation-Compliance-Report.docx)) | The customer-facing summary to share with a compliance team or committee — measure mapping, evidence package, and the SSI constraint stated up front |
 | [docs/evidence-checklist.md](./docs/evidence-checklist.md) | Recurring evidence pack, keyed to the public measures |
 | [docs/pov-plan.md](./docs/pov-plan.md) | Phased proof-of-value plan for an aviation engagement |
 
@@ -186,4 +194,4 @@ Built exclusively from the public sources cited above. Does **not** reproduce, p
 
 ---
 
-*Part of the [CSW Compliance Reference Designs](https://github.com/chandrapati/CSW-Compliance-Reference-Designs) series.*
+*Part of the Cisco Secure Workload compliance reference-design series. Umbrella index: [CSW-Compliance-Mapping](https://github.com/chandrapati/CSW-Compliance-Reference-Designs).*

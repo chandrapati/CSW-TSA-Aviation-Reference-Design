@@ -979,4 +979,4 @@ particular inspection outcome.
 
 ---
 
-*Part of the [CSW Compliance Reference Designs](https://github.com/chandrapati/CSW-Compliance-Reference-Designs) series.*
+*Part of the Cisco Secure Workload compliance reference-design series. Umbrella index: [CSW-Compliance-Mapping](https://github.com/chandrapati/CSW-Compliance-Reference-Designs).*
