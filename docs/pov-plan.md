@@ -19,7 +19,7 @@ Do this before any technical work.
 - [ ] Identify which part the assets fall under: **1544** (aircraft operator), **1542** (airport operator), or both
 - [ ] Name the customer-side person with **authorized EA access** who will map our capability rows to real provisions and to their CIP
 - [ ] **Change-control determination:** can the PoV enforce policy, or must it remain in simulation? Get this in writing from the compliance owner
-- [ ] Set the boundary explicitly in the kickoff: **no aircraft, no airport OT field devices, no endpoint fleets** (§1.3 of the design). Do this in the first meeting, not the last
+- [ ] Set the boundary explicitly in the kickoff: **no aircraft, no airport OT field devices, no endpoint fleets** (§1.2 of the design). Do this in the first meeting, not the last
 - [ ] Agree the success criteria below
 
 **Qualification signal.** If the customer cannot name who holds the EA and the CIP, the engagement is not ready — the evidence will have nothing to map to.

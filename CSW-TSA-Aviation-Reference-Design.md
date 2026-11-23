@@ -9,7 +9,7 @@
 >
 > **Joint EA 23-01 is SSI** under [49 CFR 1520.5(b)](https://www.ecfr.gov/current/title-49/section-1520.5), a status DHS confirmed in the Federal Register ([89 FR 28569](https://www.govinfo.gov/content/pkg/FR-2024-04-19/html/2024-08394.htm), n.1). Its requirement text is **not public and is not reproduced here.**
 >
-> This is the structural difference from the rail and pipeline designs in this series. Those map to a published Security Directive clause by clause. **This document cannot, and does not.** It maps CSW capability to the requirements TSA has described **publicly** — the four performance-based measures in TSA's [March 7, 2023 press release](https://www.tsa.gov/news/press/releases/2023/03/07/tsa-issues-new-cybersecurity-requirements-for-airport-and-aircraft) and the plan and assessment obligations recited in the public appellate record of *Spokane Airport Board v. TSA*.
+> Because the requirement text is SSI, **this document maps to publicly described requirements rather than to clause numbers.** It maps CSW capability to the requirements TSA has described **publicly** — the four performance-based measures in TSA's [March 7, 2023 press release](https://www.tsa.gov/news/press/releases/2023/03/07/tsa-issues-new-cybersecurity-requirements-for-airport-and-aircraft) and the plan and assessment obligations recited in the public appellate record of *Spokane Airport Board v. TSA*.
 >
 > **Your obligations are defined by your TSA-approved security program and Cybersecurity Implementation Plan, not by this document.** Validate every mapping here against your own SSI-controlled copy of the EA, with people cleared to read it.
 
@@ -30,17 +30,14 @@ operators** under part 1542 whose programs TSA has designated as
 covered by Joint EA 23-01 — plus the cybersecurity, IT, flight
 operations, and compliance teams supporting them.
 
-**Why this is a separate repo from TSA Rail.** Airlines are not
-covered by Security Directive 1580/82-2022-01E. That SD applies to
-freight railroad carriers identified in 49 CFR 1580.101 and other
-TSA-designated freight and passenger railroads, and it never mentions
-aviation. Aviation cyber requirements arrived through a **different
-legal instrument** (a security program amendment, not a security
-directive), under **different authority** (49 CFR 1542.105(d) and
-1544.105(d)), with **different durability rules** and a **different
-disclosure status**. §1.1 sets out exactly how they differ, because
-treating them as interchangeable in front of a customer or an
-inspector is a credibility problem.
+**What governs you.** Aviation cybersecurity requirements reach
+operators as an **amendment to the TSA-approved security program**
+under 49 CFR 1542.105(d) and 1544.105(d). The practical consequences
+run through this whole document: the amendment text is SSI, your
+Cybersecurity Implementation Plan becomes part of your approved
+program, and TSA inspects against that plan rather than against the
+amendment. §1.3 covers the durability rules and §8.3 covers what
+plan-level approval means for change control.
 
 **Questions this reference design helps you answer:**
 
@@ -67,8 +64,8 @@ cyber systems list as submitted, your most recent annual effectiveness
 assessment, your Cybersecurity Incident Response Plan, and your
 cybersecurity coordinator designation.
 
-**Where to start.** Read §1.2 — the SSI constraint governs how this
-document can honestly be used — then §1.3 for the scope boundary,
+**Where to start.** Read §1.1 — the SSI constraint governs how this
+document can honestly be used — then §1.2 for the scope boundary,
 which for an airline audience is unusually important because **CSW has
 no reach into aircraft.** §2 maps the publicly described requirements.
 §3–4 build the scope tree and the segmentation policy set. §7 is the
@@ -187,33 +184,12 @@ assess the effectiveness** of those plans. As recited in the public
 appellate record, airport operators had **30 days** from the effective
 date to identify critical systems and **90 days** to submit the CIP.
 
-As with rail and pipeline, the EA does not prescribe controls
-directly. **The TSA-approved plan — not the amendment text — is what
+The EA sets performance-based outcomes rather than prescribing
+controls directly. **The TSA-approved plan — not the amendment text — is what
 TSA inspects against.** Every CSW artifact in this design should
 therefore be mapped to a measure in your plan.
 
-### 1.1 Why this is not the rail Security Directive
-
-Operators with both surface and aviation businesses, and account teams
-covering both, need to keep these straight:
-
-| | **Aviation** | **Rail** |
-|---|---|---|
-| Instrument | Joint Emergency Amendment **23-01** | Security Directive **1580/82-2022-01E** |
-| Mechanism | Amends the TSA-approved **security program** | Standalone **security directive** |
-| Authority | 49 CFR **1542.105(d)**, **1544.105(d)** | 49 U.S.C. **114(l)(2)** |
-| Covered parties | Certain airport operators (part 1542) and aircraft operators (part 1544) | Freight carriers per 49 CFR 1580.101 + TSA-designated freight/passenger railroads |
-| TSOB ratification | **Not required** — different authority | **Required** to remain effective beyond 90 days |
-| Expiry / renewal | **No fixed expiry**; no annual revision letter | Annual renewal; revision letter advances (01 → 01E) |
-| Public disclosure | **SSI** — text not public | TSA determined the SD text is **not** SSI |
-| Clause-level mapping possible? | **No** | Yes |
-
-The last two rows are the ones that change how you work. For rail you
-can hand a customer a provision-by-provision map. For aviation you
-cannot, and any document that claims to is either working from SSI it
-should not be redistributing or inventing provision numbers.
-
-### 1.2 The SSI constraint — what this document can and cannot do
+### 1.1 The SSI constraint — what this document can and cannot do
 
 **What this design is built from (all public):**
 
@@ -242,7 +218,7 @@ and your approved CIP confirm each row. Where this document says
 "Measure 1," your CIP will have its own numbering — **use your CIP's
 numbering in your evidence pack.**
 
-### 1.3 Scope boundary — read this before claiming anything
+### 1.2 Scope boundary — read this before claiming anything
 
 **CSW is a workload protection platform for IT estate** — servers,
 virtual machines, containers, and cloud workloads. Three exclusions
@@ -294,9 +270,10 @@ Dragos, or equivalent), your IT/OT boundary firewalls, and your
 endpoint platform remain the controlling artifacts outside that left
 column. CSW complements them and does not replace them.
 
-### 1.4 Durability and version discipline
+### 1.3 Durability and version discipline
 
-Unlike the rail SD, there is **no annual revision letter to chase**:
+EA 23-01 holds its force through the security program itself, so there
+is **no annual revision letter to chase**:
 
 - EA 23-01 was **immediately effective** on issuance and, under
   1542.105(d), **is not stayed** by a petition for reconsideration.
@@ -325,8 +302,9 @@ customer's TSA principal security inspector — not from this document.
 **SSI handling.** The amendment is SSI, and everything the operator
 submits under it is SSI. Treat CSW evidence exports as SSI from the
 moment they are incorporated into a plan, assessment, or submission,
-and handle them under 49 CFR part 1520. This is stricter than rail,
-where the SD text itself is openly discussable.
+and handle them under 49 CFR part 1520. Both the amendment and your
+submissions sit inside the SSI boundary, so apply part 1520 handling
+to the whole chain from the moment evidence is generated.
 
 ---
 
@@ -338,7 +316,7 @@ this document.
 **On the row labels in this section:** the first column describes a
 **capability the publicly stated measure implies**. These are *not* EA
 provision numbers, and no EA numbering is used anywhere in this
-document — see §1.2. Replace them with your CIP's own measure
+document — see §1.1. Replace them with your CIP's own measure
 references when you build the evidence pack.
 
 ### 2.1 Measure 1 — Network segmentation
@@ -367,7 +345,7 @@ isolation between tiers, in both directions, from observed behaviour?**
 | Demonstrate isolation holds **in both directions** | 🟢 Direct | Paired deny rules and a bidirectional negative test (§4.2) — the asymmetric test is the common gap |
 | Verify traffic crossing zones is protected | 🟠 Supporting | `Plaintext-Crossing-Zones` filter finds cleartext crossings; CSW detects, it does not encrypt |
 | Firewall / network device configuration at the boundary | ⚪ Evidence Required | Boundary firewall and network device configs come from the network team |
-| Physical and logical isolation of OT field networks | ⚪ Evidence Required | Out of CSW's reach entirely (§1.3) |
+| Physical and logical isolation of OT field networks | ⚪ Evidence Required | Out of CSW's reach entirely (§1.2) |
 
 ### 2.2 Measure 2 — Access control
 
@@ -476,8 +454,8 @@ Required, across 43 mapped capabilities.
 That ⚪ count is higher than any other design in this series, and the
 reason is structural rather than a shortcoming: two of the four
 measures (access control, patching) are predominantly identity and
-endpoint work, and the aviation estate excluded in §1.3 — aircraft,
-airport OT, endpoint fleets — is larger than rail's. Lead with the
+endpoint work, and the aviation estate excluded in §1.2 — aircraft,
+airport OT, endpoint fleets — is unusually broad. Lead with the
 🟢 column and name the ⚪ column before a customer discovers it.
 
 ---
@@ -530,14 +508,14 @@ because it is the population whose disruption is operationally
 unambiguous, and the one an inspector will probe first.
 **`Passenger-Service-Systems`** exists because reservations and
 departure control are *business* systems whose loss grounds an
-airline — this is where under-scoping usually hides, exactly as crew
-scheduling does in rail. **`Industry-Networks`** has no analog in the
-surface designs and is the branch most often missing from an airline's
+airline — this is where under-scoping usually hides.
+**`Industry-Networks`** is specific to aviation and is the branch most
+often missing from an airline's
 documentation: SITA and ARINC messaging, GDS connectivity, interline
 and codeshare feeds are external connections into operational systems,
 frequently legacy, and frequently not firewalled like internet traffic.
 **`Datalink-Ground-Gateway`** is named separately so the ground/air
-split is explicit in the tree itself, which keeps the §1.3 boundary
+split is explicit in the tree itself, which keeps the §1.2 boundary
 visible to anyone reading the export.
 
 ### 3.2 Inventory Filters
@@ -605,7 +583,7 @@ question in advance.
 ### 3.4 Airport operators (part 1542)
 
 An airport operator's tree keeps the same shape but repopulates the
-critical branch, and the §1.3 boundary bites much harder because more
+critical branch, and the §1.2 boundary bites much harder because more
 of the interesting estate is OT:
 
 ```
@@ -739,7 +717,7 @@ it is that you have, and that you know how long it took.
 | **Mainline network carrier** | Flight operations tier first — dispatch, flight following, planning, crew. Highest inspection salience and clearest disruption story | Hub-and-spoke station sprawl; decades of accumulated interline and GDS connectivity; mainframe-era PSS components that resist agent deployment |
 | **Regional / feeder carrier** | PSS and the capacity-purchase interconnect to the mainline partner | The mainline partner's systems are an **external connection** even when the relationship is exclusive; codeshare paths often undocumented |
 | **All-cargo operator** | Cargo management, air waybill, and ground handling interconnect | Customs and trade data flows cross borders and jurisdictions; handler networks are numerous and loosely governed |
-| **Airport operator (part 1542)** | Server and management tier behind BHS, ACAMS, VMS, common-use | §1.3 and §3.4 — most of the interesting estate is OT and out of reach; set expectations before the first workshop |
+| **Airport operator (part 1542)** | Server and management tier behind BHS, ACAMS, VMS, common-use | §1.2 and §3.4 — most of the interesting estate is OT and out of reach; set expectations before the first workshop |
 | **Dual-obligation operator** | Keep exports separable from day one | Use `security_program` to tag 1544 vs 1542 assets; the two programmes are amended separately |
 
 For every profile, the **30-day critical-systems and 90-day plan
@@ -753,7 +731,7 @@ only way to meet a 30-day identification deadline with any confidence.
 ## 6. Evidence Package
 
 Map every artifact to a measure in **your approved CIP**, using your
-CIP's numbering rather than this document's labels (§1.2).
+CIP's numbering rather than this document's labels (§1.1).
 
 | CSW artifact | Export path | Evidences |
 |---|---|---|
@@ -784,7 +762,7 @@ group and cite the first as context.
 
 Cadence: quarterly export into a dated binder, ADM refreshed every 90
 days, assessment pack assembled annually. **Treat each binder as SSI**
-once it is incorporated into a submission (§1.4).
+once it is incorporated into a submission (§1.3).
 
 ---
 
@@ -806,7 +784,7 @@ a named artifact in your plan.
 
 **Aircraft.** CSW has no reach into avionics, onboard networks,
 flight-deck or cabin systems, or the aircraft end of a datalink. There
-is no partial answer and no roadmap answer. Say so early (§1.3).
+is no partial answer and no roadmap answer. Say so early (§1.2).
 
 **The airport OT layer.** Baggage conveyor controls, access control and
 camera field devices, airfield lighting, boarding bridges, fuel
@@ -884,8 +862,9 @@ drift history" answers effectiveness.
 
 ### 8.3 The change-control trap
 
-This is the aviation-specific operational constraint, and it has no
-exact rail equivalent.
+This is the aviation-specific operational constraint, and it follows
+directly from the EA having been issued as a security program
+amendment.
 
 Because EA 23-01 **amends the security program**, the Cybersecurity
 Implementation Plan becomes part of that TSA-approved program — and
