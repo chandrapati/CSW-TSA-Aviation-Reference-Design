@@ -26,6 +26,14 @@ No EA provision numbers appear anywhere in this repo. The capability labels in t
 
 ---
 
+## What CSW reaches, and what you evidence elsewhere
+
+![TSA Aviation scope boundary — the three aviation exclusions, with the ground IT estate CSW reaches set against what must be evidenced outside CSW](assets/csw-scope-boundary.png)
+
+## How the evidence gets produced
+
+![CSW evidence workflow for TSA Aviation — four phases from agent coverage through continuous proof, with the export artifact produced at each phase and the CIP change-control check before enforcement](assets/csw-evidence-workflow.png)
+
 ## The instrument, and what it means for you
 
 | | **Joint EA 23-01** |
