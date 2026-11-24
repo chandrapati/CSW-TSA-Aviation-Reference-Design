@@ -97,6 +97,8 @@ Cisco Secure Workload (CSW) is a **workload protection platform**. A lightweight
 
 Execute these phases for **this framework's** compliance boundary. Map exports to the measures in **your approved CIP** — see the **Evidence Package** section below.
 
+![CSW evidence workflow for TSA Aviation — four phases from agent coverage through continuous proof, with the export artifact produced at each phase and the CIP change-control check before enforcement](assets/csw-evidence-workflow.png)
+
 | Phase | Goal | Key CSW actions | Typical duration |
 |-------|------|-----------------|------------------|
 | **1 — Coverage** | Every in-scope workload in CSW | Install agents/connectors; apply compliance labels; create scope | Days 1–10 |
@@ -219,6 +221,8 @@ and your approved CIP confirm each row. Where this document says
 numbering in your evidence pack.**
 
 ### 1.2 Scope boundary — read this before claiming anything
+
+![TSA Aviation scope boundary — the three aviation exclusions, with the ground IT estate CSW reaches set against what must be evidenced outside CSW](assets/csw-scope-boundary.png)
 
 **CSW is a workload protection platform for IT estate** — servers,
 virtual machines, containers, and cloud workloads. Three exclusions
@@ -463,6 +467,9 @@ airport OT, endpoint fleets — is unusually broad. Lead with the
 ## 3. Scope Architecture and Labeling
 
 Build the scope tree so that the tree *is* the zone model in your
+
+![TSA Aviation scope architecture — the recommended CSW scope hierarchy, with label-driven membership so the boundary stays current](assets/csw-scope-architecture.png)
+
 Cybersecurity Implementation Plan. If the two diverge, the CSW export
 stops being evidence and becomes a contradiction an inspector will
 pursue — and because your CIP is part of your approved security
