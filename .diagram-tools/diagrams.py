@@ -12,9 +12,9 @@ W, H = 1600, 900
 
 
 # ----------------------------------------------------------------- shared bits
-def _header(kicker: str, title: str, title_tail: str, sub: str) -> str:
+def _header(kicker: str, title: str, title_tail: str, sub: str, pad: int = 34) -> str:
     return f"""
-<div class="hdr" style="height:96px;padding:0 34px">
+<div class="hdr" style="height:96px;padding:0 {pad}px">
   {mark_html(unit=1.45)}
   <div class="wordmark">CISCO<small>SECURE WORKLOAD</small></div>
   <div class="titles">
@@ -28,14 +28,14 @@ def _header(kicker: str, title: str, title_tail: str, sub: str) -> str:
 </div>"""
 
 
-def _footer(tag: str, body: str, rail: list[str]) -> str:
+def _footer(tag: str, body: str, rail: list[str], pad: int = 34) -> str:
     items = "".join(
         f'<div style="font-size:11px;line-height:1.45;margin:3px 0">'
         f'<span class="ck">&#10003;</span><span>{r}</span></div>'
         for r in rail
     )
     return f"""
-<div class="ftr" style="height:92px;padding:0 34px">
+<div class="ftr" style="height:92px;padding:0 {pad}px">
   <div class="tag" style="font-size:17px">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
       <circle cx="12" cy="12" r="10" stroke="#9FD9F6" stroke-width="2"/>
@@ -50,50 +50,67 @@ def _footer(tag: str, body: str, rail: list[str]) -> str:
 
 # -------------------------------------------------------- 1. evidence workflow
 def evidence_workflow(spec: dict) -> str:
-    """Four numbered phase cards, in the style of the CSW policy-workflow deck."""
-    n = len(spec["phases"])
-    gap, pad = 26, 28
-    cw = (W - 2 * pad - (n - 1) * gap) / n
+    """Numbered phase cards, in the style of the CSW policy-workflow deck.
 
+    Handles 4-phase and 6-step documents. `when` and `exit` are optional, so a
+    framework that records exit criteria instead of durations still renders.
+    """
+    n = len(spec["phases"])
+    w = spec.get("width", W)
+    gap, pad = (26, 28) if n <= 4 else (16, 24)
+    cw = (w - 2 * pad - (n - 1) * gap) / n
+    fs = 12.0 if n <= 4 else 10.8      # body text shrinks as cards narrow
+    hs = 16.5 if n <= 4 else 14.0
+
+    card_h = spec.get("card_h", 382)
     cards = []
     for i, ph in enumerate(spec["phases"], 1):
         acts = "".join(
-            f'<li style="font-size:12px;line-height:1.45;padding-left:15px;margin:7px 0">'
+            f'<li style="font-size:{fs}px;line-height:1.42;padding-left:14px;margin:6px 0">'
             f"{a}</li>"
             for a in ph["actions"]
         )
+        when = (f'<div class="pill" style="font-size:10px;padding:3px 10px;margin-top:10px">'
+                f'{ph["when"]}</div>') if ph.get("when") else ""
+        exit_note = (f"""
+    <div class="pill" style="display:block;font-size:9.8px;line-height:1.35;padding:7px 10px;
+         margin-bottom:7px;font-weight:400">
+      <b>Exit&nbsp;&rsaquo;</b> {ph['exit']}
+    </div>""") if ph.get("exit") else ""
+        # A design that does not name an export for a phase gets no evidence
+        # strip, rather than a strip restating the phase's last bullet.
+        export_note = (f'''
+    <div class="note" style="padding:9px 11px;font-size:10.2px;line-height:1.4">
+      <span class="lbl">Evidence&nbsp;&rsaquo;</span> {ph['export']}
+    </div>''') if ph.get("export") else ""
         cards.append(f"""
 <div class="card" style="width:{cw:.1f}px;padding:0">
   <div style="background:{P['blue_wash_2']};border-bottom:1px solid {P['rule']};
-       padding:13px 15px 12px">
+       padding:13px 14px 12px">
     <header>
       <div class="badge" style="width:30px;height:30px;font-size:15px">{i}</div>
       <div style="flex:1 1 auto">
-        <h2 style="font-size:16.5px;line-height:1.15">{ph['name']}</h2>
-        <div class="goal" style="font-size:11px;line-height:1.35;margin-top:4px">{ph['goal']}</div>
+        <h2 style="font-size:{hs}px;line-height:1.15">{ph['name']}</h2>
+        <div class="goal" style="font-size:10.8px;line-height:1.35;margin-top:4px">{ph['goal']}</div>
       </div>
     </header>
-    <div class="pill" style="font-size:10px;padding:3px 10px;margin-top:10px">{ph['when']}</div>
+    {when}
   </div>
-  <ul class="acts" style="flex:1 1 auto;padding:12px 15px 6px">{acts}</ul>
-  <div style="padding:0 13px 13px">
-    <div class="note" style="padding:9px 11px;font-size:10.5px;line-height:1.4">
-      <span class="lbl">Export&nbsp;&rsaquo;</span> {ph['export']}
-    </div>
-  </div>
+  <ul class="acts" style="flex:1 1 auto;padding:11px 14px 5px">{acts}</ul>
+  <div style="padding:0 12px 12px">{exit_note}{export_note}</div>
 </div>""")
 
     arrows = "".join(
-        f'<div class="flow" style="left:{pad + cw * k + gap * (k - 1) + 5:.1f}px">'
+        f'<div class="flow" style="left:{pad + cw * k + gap * (k - 1) + (gap - 16) / 2:.1f}px">'
         f"<i></i><b></b></div>"
         for k in range(1, n)
     )
 
     body = (
-        _header(spec["kicker"], spec["title"], spec["title_tail"], spec["sub"])
+        _header(spec["kicker"], spec["title"], spec["title_tail"], spec["sub"], pad)
         + f"""
 <div style="position:relative;padding:22px {pad}px 0">
-  <div style="display:flex;gap:{gap}px;align-items:stretch;height:382px">{''.join(cards)}</div>
+  <div style="display:flex;gap:{gap}px;align-items:stretch;height:{card_h}px">{''.join(cards)}</div>
   {arrows}
 </div>
 <div style="padding:16px {pad}px 0">
@@ -101,7 +118,7 @@ def evidence_workflow(spec: dict) -> str:
     <span class="lbl">{spec['caution_label']}</span> {spec['caution']}
   </div>
 </div>"""
-        + _footer(spec["takeaway_tag"], spec["takeaway"], spec["rail"])
+        + _footer(spec["takeaway_tag"], spec["takeaway"], spec["rail"], pad)
     )
     return body
 

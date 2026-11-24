@@ -467,6 +467,9 @@ airport OT, endpoint fleets — is unusually broad. Lead with the
 ## 3. Scope Architecture and Labeling
 
 Build the scope tree so that the tree *is* the zone model in your
+
+![TSA Aviation scope architecture — the recommended CSW scope hierarchy, with label-driven membership so the boundary stays current](assets/csw-scope-architecture.png)
+
 Cybersecurity Implementation Plan. If the two diverge, the CSW export
 stops being evidence and becomes a contradiction an inspector will
 pursue — and because your CIP is part of your approved security
